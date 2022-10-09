@@ -1,0 +1,36 @@
+.review-item {
+  width: 60%;
+  border: 2px solid tomato;
+  padding: 0.5rem;
+  margin: 1rem auto;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.review-item img {
+  width: 7rem;
+}
+
+.item-details {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.details p {
+  margin: 0.2rem;
+}
+.details .title {
+  font-weight: bold;
+  color: rgba(36, 36, 36, 0.822);
+}
+.delete button {
+  background-color: tan;
+  border: none;
+
+  padding: 0.5rem;
+}
+.delete button:hover {
+  background-color: red;
+}
