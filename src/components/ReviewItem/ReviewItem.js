@@ -1,7 +1,8 @@
 import React from 'react';
 import './ReviewItem.css';
-const ReviewItem = (props) => {
-  const { name, price, quantity, img, shipping } = props.product;
+const ReviewItem = ({ product, handleDeleteItem }) => {
+  const { name, price, quantity, img, shipping, id } = product;
+
   return (
     <div className='review-item'>
       <div>
@@ -15,7 +16,7 @@ const ReviewItem = (props) => {
           <p>Shipping: ${shipping}</p>
         </div>
         <div className='delete'>
-          <button>Delete</button>
+          <button onClick={() => handleDeleteItem(id)}>Delete</button>
         </div>
       </div>
     </div>
