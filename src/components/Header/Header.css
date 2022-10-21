@@ -21,3 +21,6 @@
 .header .active {
   color: orange;
 }
+.user {
+  color: white !important;
+}
