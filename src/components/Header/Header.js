@@ -5,8 +5,17 @@ import logo from '../../images/Logo.svg';
 import './Header.css';
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        //signed out successfully
+      })
+      .catch((error) => {
+        //error occured
+      });
+  };
   return (
     <nav className='header'>
       <Link to='/'>
@@ -21,9 +30,15 @@ const Header = () => {
         <NavLink to='/orders'>Orders</NavLink>
         <NavLink to='/inventory'>Inventory</NavLink>
         <NavLink to='/about'>About</NavLink>
-        <NavLink to='/login'>Log In</NavLink>
-        <NavLink to='/signup'>Sign Up</NavLink>
-        <NavLink className='user'>@{user?.displayName}</NavLink>
+        {user?.email && <NavLink className='user'>{user?.email}</NavLink>}
+        {user?.uid ? (
+          <NavLink onClick={() => handleSignOut()}>Log Out</NavLink>
+        ) : (
+          <>
+            <NavLink to='/login'>Log In</NavLink>
+            <NavLink to='/signup'>Sign Up</NavLink>
+          </>
+        )}
       </div>
     </nav>
   );

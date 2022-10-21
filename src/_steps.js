@@ -18,5 +18,20 @@
  * 4. value set
  * 5. in index.js file set import and set Context component and as children give <App/> component.
  * 6. get form data
- * 7.
+ * 7. getAuth in the UserContext
+ *
+ * ----------
+ * firebase hosting
+ * ---------
+ * 1. one time for each computer
+ * 2. npm install -g firebase-tools
+ * 3. firebase login
+ * 4. firebase init (for each project one time )
+ * 5. build folder select
+ * 6. single page ? y
+ * 7. github ? n
+ *
+ * *** for every delpoy
+ * 1. npm run build
+ * 2. firebase deploy
  */

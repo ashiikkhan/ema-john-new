@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './SignUp.css';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/UserContext';
 
 const SignUp = () => {
   const [error, setError] = useState(null);
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,6 +26,15 @@ const SignUp = () => {
       return;
     }
     setError(null);
+
+    //createUser
+    createUser(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        form.reset();
+      })
+      .catch((error) => console.log(error));
   };
 
   return (
